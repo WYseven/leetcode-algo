@@ -17,7 +17,6 @@ var integerBreak = function(n) {
       
     }
   }
-  console.log(mome[n])
   return mome[n]
 };
 
