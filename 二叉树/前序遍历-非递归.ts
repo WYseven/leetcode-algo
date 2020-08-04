@@ -1,3 +1,4 @@
+// 地址：https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -17,7 +18,7 @@ function preorderTraversal(root: TreeNode | null): number[] {
   if(root === null) return result
   let stack: Array<TreeNode> = []
   stack.push(root)   // 根先入栈
-  
+
   while(stack.length) {
     let node = stack.pop()
     node && result.push(node.val)
