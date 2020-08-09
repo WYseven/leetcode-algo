@@ -30,3 +30,21 @@ function preorderTraversal(root: TreeNode | null): number[] {
 
   return result
 };
+
+function preorderTraversal2(root: TreeNode | null): number[] {
+  let result: number[] = []
+  if(root === null) return result
+  let stack: Array<TreeNode> = []
+  
+  let p: any = root
+  // 根节点先入结果集中，然后不断找左节点
+  while(p || stack.length) {
+    while(p){
+      result.push(p.val)
+      if(p.right) stack.push(p.right)
+      p = p.left
+    }
+    p = stack.pop()
+  }
+  return result
+};

@@ -20,8 +20,12 @@ function postorderTraversal(root: TreeNode | null): number[] {
   while(p || stack.length) {
     // 依次找右侧
     while(p){
-      
-      p = p.right
+      result.push(p.val)
+      stack.push(p)
+      p = p.left
     }
+    p = stack.pop()
+    p = p.right
   }
+  return result.reverse()
 };
