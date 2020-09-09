@@ -55,21 +55,21 @@ var lengthOfLongestSubstring = function(s) {
 var lengthOfLongestSubstring = function(s) {
   if(s.length === 0) return 0
   let map = {}, start = 0, max = -Infinity;
-  let i = 0;
-  for(; i < s.length; i++) {
-    if(map[s[i]] > start) {
-      max = Math.max(max, i - start)
-      start = map[s[i]]
+  let end = 0;
+  for(; end < s.length; end++) {
+    if(map[s[end]] > start) {
+      max = Math.max(max, end - start)
+      start = map[s[end]]
     }
-    map[s[i]] = i + 1
+    map[s[end]] = end + 1
   }
-  return max = Math.max(max, i - start)
+  return max = Math.max(max, end - start)
 };
 
-// console.log(lengthOfLongestSubstring('abcabcbb'))
-// console.log(lengthOfLongestSubstring('bbbbb'))
-// console.log(lengthOfLongestSubstring('pwwkew'))
-// console.log(lengthOfLongestSubstring('dvdf'))
+console.log(lengthOfLongestSubstring('abcabcbb'))
+console.log(lengthOfLongestSubstring('bbbbb'))
+console.log(lengthOfLongestSubstring('pwwkew'))
+console.log(lengthOfLongestSubstring('dvdf'))
 console.log(lengthOfLongestSubstring("aabaab!bb"))
-// console.log(lengthOfLongestSubstring("a"))
-// console.log(lengthOfLongestSubstring("abba"))
+console.log(lengthOfLongestSubstring("a"))
+console.log(lengthOfLongestSubstring("abba"))
