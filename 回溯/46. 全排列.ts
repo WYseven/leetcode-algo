@@ -2,7 +2,7 @@ function startPermute(nums: number[], temp: number[], result: Array<Array<number
   if(nums.length === temp.length){
     result.push([...temp])
   }
-  
+
   for(let i = 0; i < nums.length; i++){
     if(permute.cache[nums[i]]) continue
     temp.push(nums[i])
