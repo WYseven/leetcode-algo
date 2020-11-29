@@ -18,6 +18,7 @@ var permute = function(nums) {
     for(let i = 0; i < nums.length; i++){
 
       if(vis[i]) continue  // 已经存在
+      // 跳过之前已经排列过的重复项
       if( i > 0 && nums[i] === nums[i - 1] && !vis[i - 1] ){
         continue
       }
