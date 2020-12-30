@@ -67,6 +67,28 @@ var letterCombinations = function(digits) {
   return result
 };
 
+var letterCombinations = function(digits) {
+  if(digits.length === 0) return []
+  const result = []
+  result.push('') // 第一层
+  for(let i = 0; i < digits.length; i++){
+
+    let len = result.length;  // 层级节点数
+    let strArr = phone[digits[i]] // 数字对应的字母
+
+    for(let j = 0; j < len; j++){
+      let val = result.shift()  // 原来层级的节点出队
+      // 新的层级节点组合进入队列中
+      for(let k = 0; k < strArr.length; k++){
+        result.push(val + strArr[k])
+      }
+
+    }
+  }
+  
+  return result
+};
+
 
 
 console.log(letterCombinations("23"));
