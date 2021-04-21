@@ -39,9 +39,7 @@
             break;
           }
         }
-        
         i = j - 1
-        console.log(sigend , nums);
         ret += sigend * nums
     }
 
